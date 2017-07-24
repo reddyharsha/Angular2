@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './media-item.component';
 import { MediaItemListComponent } from './media-item-list/media-item-list.component';
+import { FavoriteDirective } from './favorite.directive';
 
 // This is the Root module. This is the starting point module for an angular application.
 
@@ -11,7 +12,7 @@ import { MediaItemListComponent } from './media-item-list/media-item-list.compon
   // Harsha: The declarations property is used to make components and
   // directives and pipes available to your module that don't come from another module
   declarations: [
-    AppComponent, MediaItemComponent, MediaItemListComponent
+    AppComponent, MediaItemComponent, MediaItemListComponent, FavoriteDirective
   ],
   imports: [ // Harsha: The imports module is used to bring in other modules that your module is going to need
     BrowserModule
