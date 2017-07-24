@@ -8,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Harsha\'s test app';
+
+  firstMediaItem = {
+    id: 1,
+    name: 'Firebug',
+    medium: 'Series',
+    category: 'Science Fiction',
+    year: '2010',
+    watchedOn: '12/10/2016',
+    isFavorite: false
+  };
+
+  onMediaItemDelete(mediaItem) {
+    alert('Want to delete ' + mediaItem.name + '?');
+  };
+
 }
