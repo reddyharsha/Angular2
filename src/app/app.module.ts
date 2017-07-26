@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './media-item.component';
@@ -18,7 +18,7 @@ import { MediaItemFormComponent } from './media-item-form/media-item-form.compon
     AppComponent, MediaItemComponent, MediaItemListComponent, FavoriteDirective, CategoryListPipe, MediaItemFormComponent
   ],
   imports: [ // Harsha: The imports module is used to bring in other modules that your module is going to need
-    BrowserModule, FormsModule
+    BrowserModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // Harsha: This is the entry point for the app code.
