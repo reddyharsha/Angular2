@@ -1,4 +1,4 @@
-<h2>{{mediaItem.name}}</h2>
+<h2>{{mediaItem.name | slice:0:10 | uppercase }}</h2>
 
 <!--Structural directives work with template elements to modify the DOM. 
 A structural directive placed on an element named template will handle either 
@@ -13,7 +13,7 @@ binding and add a template element around the container element.-->
 
 <!--  div *ngIf="mediaItem.watchedOn">Watched On {{mediaItem.watchedOn}}</div -->
 <template [ngIf]="mediaItem.watchedOn">
-	<div>Watched On {{mediaItem.watchedOn}}</div>
+	<div>Watched On {{mediaItem.watchedOn | date: 'shortDate'}}</div>
 </template>
 <div>{{mediaItem.category}}</div>
 <div>{{mediaItem.year}}</div>
