@@ -9,16 +9,9 @@ import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './media-item-list/category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form/media-item-form.component';
 import { MediaItemService } from './services/media-item.service';
+import { lookupMediumListToken, lookupMediumLists, lookupCategoryListToken, lookupCategoryLists } from './providers';
 
 // This is the Root module. This is the starting point module for an angular application.
-
-const lookupMediumLists = {
-  mediums: ['Movies', 'Series']
-};
-
-const lookupCategoryLists = {
-  categories: ['Action', 'Comedy', 'Drama', 'Horror', 'Science Fiction']
-};
 
 @NgModule({   // Harsha: All the properties within this NgModule is called MetaData
   // Harsha: The declarations property is used to make components and
@@ -30,8 +23,8 @@ const lookupCategoryLists = {
     BrowserModule, ReactiveFormsModule
   ],
   providers: [MediaItemService, 
-    {provide: 'lookupMediumListToken', useValue: lookupMediumLists }, 
-    {provide: 'lookupCategoryListToken', useValue: lookupCategoryLists }],
+    {provide: lookupMediumListToken, useValue: lookupMediumLists }, 
+    {provide: lookupCategoryListToken, useValue: lookupCategoryLists }],
   bootstrap: [AppComponent] // Harsha: This is the entry point for the app code.
 })
 export class AppModule { }
