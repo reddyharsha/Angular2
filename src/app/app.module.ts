@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule, XHRBackend } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './media-item.component';
@@ -10,6 +11,7 @@ import { CategoryListPipe } from './media-item-list/category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form/media-item-form.component';
 import { MediaItemService } from './services/media-item.service';
 import { lookupMediumListToken, lookupMediumLists, lookupCategoryListToken, lookupCategoryLists } from './providers';
+import { MockXHRBackend } from './mock-xhr-backend';
 
 // This is the Root module. This is the starting point module for an angular application.
 
@@ -20,11 +22,12 @@ import { lookupMediumListToken, lookupMediumLists, lookupCategoryListToken, look
     AppComponent, MediaItemComponent, MediaItemListComponent, FavoriteDirective, CategoryListPipe, MediaItemFormComponent
   ],
   imports: [ // Harsha: The imports module is used to bring in other modules that your module is going to need
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, ReactiveFormsModule, HttpModule
   ],
   providers: [MediaItemService, 
     {provide: lookupMediumListToken, useValue: lookupMediumLists }, 
-    {provide: lookupCategoryListToken, useValue: lookupCategoryLists }],
+    {provide: lookupCategoryListToken, useValue: lookupCategoryLists },
+    {provide: XHRBackend, useClass: MockXHRBackend }],
   bootstrap: [AppComponent] // Harsha: This is the entry point for the app code.
 })
 export class AppModule { }
